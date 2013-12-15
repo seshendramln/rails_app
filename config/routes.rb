@@ -1,4 +1,7 @@
 SkillableApp::Application.routes.draw do
+  get "pages/companies_list"
+  get "pages/companies_view"
+  get "pages/companies_rate"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
