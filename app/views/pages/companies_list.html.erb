@@ -1,2 +1,58 @@
-<h1>Pages#companies_list</h1>
-<p>Find me in app/views/pages/companies_list.html.erb</p>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        
+      </section>
+     
+  </div>  
+<% else %>
+
+<h1>companies_list</h1>
+<p>List of companies</p>
+ <table border="3">
+<tr>
+<th>#</th>
+<th>Name</th>
+<th>City,Country </th>
+<th>Employee satisfaction </th>
+<th>#votes </th>
+</tr>
+<tr>
+<td>1</td>
+<td>Skillable</td>
+<td>Stockholm</td>
+<td>82%</td>
+<td>4</td>
+<th>   <%= link_to "View", signin_path %></th>
+</tr>
+<tr>
+<td>2</td>
+<td>Klarna</td>
+<td>Stockholm</td>
+<td>75%</td>
+<td>3</td>
+<th>   <%= link_to "View", signin_path %></th>
+</tr>
+<tr>
+<td>3</td>
+<td>ericssionAB</td>
+<td>Stockholm</td>
+<td>65%</td>
+<td>3</td>
+<th>   <%= link_to "View", signin_path %></th>
+</tr>
+<tr>
+<td>4</td>
+<td>spotifyAB</td>
+<td>Stockholm</td>
+<td>55%</td>
+<td>4</td>
+<th>   <%= link_to "View", signin_path %></th>
+</tr>
+</table> 
+
+
+
+  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+<% end %> 

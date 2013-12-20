@@ -1,7 +1,26 @@
 SkillableApp::Application.routes.draw do
-  get "pages/companies_list"
-  get "pages/companies_view"
-  get "pages/companies_rate"
+   resources :users do
+   
+  end
+  resources :sessions,      only: [:new, :create, :destroy]
+  
+  root to: 'pages#companies_list'
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match '/companies_view',    to: 'pages#companies_view',    via: 'get'
+  match '/companies_rate',   to: 'pages#companies_rate',   via: 'get'
+ 
+end
+
+# get "pages/companies_list"
+# get "pages/companies_view"
+# get "pages/companies_rate"
+ 
+
+# root :to => 'users/index'
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -56,4 +75,4 @@ SkillableApp::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

@@ -1,0 +1,18 @@
+# create the login views  
+# /app/views/user_sessions/_form.html.erb 
+
+<% form_for @user_session, :url => {:action => "create"} do |f| %>  
+  <%= form.error_messages %>  
+  
+  <p>  
+    <%= form.label :login %>  
+    <%= form.text_field :login %>  
+  </p>  
+  
+  <p>  
+    <%= form.label :password %>  
+    <%= form.password_field :password %>  
+  </p>  
+  
+  <%= form.submit 'Login' %>  
+<% end %>  
