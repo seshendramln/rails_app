@@ -1,0 +1,15 @@
+class Companies_minesController < ApplicationController
+  before_action :signed_in_user, only: [:create, :destroy]
+  before_action :correct_user,   only: :destroy
+
+   private
+
+    def companies_mines_params
+      params.require(:companies_mines).permit(:company)
+    end
+  
+    def correct_user
+      @micropost = current_user.microposts.find_by(id: params[:id])
+      redirect_to root_url if @companies_mines.nil?
+    end
+end

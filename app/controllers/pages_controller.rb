@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   def companies_list
   	@title = "companies_list"
   	if signed_in?
+       @companies_mines  = current_user.companies_mines.build
     end
   end
 
