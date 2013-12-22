@@ -1,18 +1,21 @@
-
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        
+<table class="profile" summary="profile information">
+<tr>
+  <td class="main">
+     <h1>
+         <%= gravatar_for @user %>
+        <%= @user.name %>
       </h1>
-    </section>
-    <section>
-      
-    </section>
-  </aside>
-  <div class="span8">
 
-   
-   
-  </div>
-</div>
+      <% if @user.companies_mines.any?%>
+      <table class="comapnies" summary="User comapanies">
+      <%- # render @companies_mines -%>
+      </table>
+      <% end %>
+  </td>
+  <td class ="sidebar round">
+  <strong>Name</strong> <%= @user.name %> <br />
+  <strong>URL</strong> <%= link_to user_path(@user) ,@user %><br />
+  <strong>Number of companies worked before</strong> <%= @user.companies_mines.count %>
+   </td>
+</tr>
+</table>

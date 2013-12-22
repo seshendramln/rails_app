@@ -1,12 +1,14 @@
 <% if signed_in? %>
   <div class="row">
     <aside class="span4">
-      <section>
-        
+     <section>
+        <%= render 'shared/user_info' %>
       </section>
      
   </div>  
 <% else %>
+<div class="center hero-unit">
+
 
 <h1>companies_list</h1>
 <p>List of companies</p>
